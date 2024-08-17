@@ -6,9 +6,15 @@
   <string name="login_digite_senha">Digite a senha</string>
   <string name="login_button_efetuar_login">Fazer Login</string>
 
+  <string name="nome">Digite aqui o nome</string>
+  <string name="email">Digite aqui o email</string>
+  <string name="senha">Digite aqui a senha</string>
+  <string name="confirmarSenha">Confirme aqui a senha</string>
+  <string name="teste">teste</string>
+  <string name="teste2">teste 2</string>
 
-  <!-- TODO: Alterar o link do Firebase para o que você criou -->
-  <string name="firebase_url">https://health-visualization-default-rtdb.firebaseio.com/</string>
+
+  <string name="firebase_url">https://health-visualization-d683c-default-rtdb.firebaseio.com/</string>
 
 
 </resources>

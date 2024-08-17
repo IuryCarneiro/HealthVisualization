@@ -3,4 +3,6 @@
   <dimen name="inner_frame_layout_padding">10dp</dimen>
   <dimen name="inner_frame_layout_horizontal_padding">25dp</dimen>
   <dimen name="inner_frame_layout_vertical_padding">25dp</dimen>
+  <dimen name="dimensao">16sp</dimen>
+  <dimen name="tamanho">16dp</dimen>
 </resources>

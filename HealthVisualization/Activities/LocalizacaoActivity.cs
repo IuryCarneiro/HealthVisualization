@@ -64,7 +64,7 @@ namespace HealthVisualization.Activities
                         else
                         {
                             // Permissão negada, você pode mostrar uma mensagem ou fazer outra ação
-                            Toast.MakeText(this, "Permissão de localização foi negada.", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                            Toast.MakeText(this, "A permissão de localização nao foi aceita.", ToastLength.Short).Show();
                         }
                     }
                     break;
@@ -106,7 +106,7 @@ namespace HealthVisualization.Activities
             OnLocationChanged(location);
 
             // Agenda a próxima atualização
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 500);
         }
 
         private List<LatLng> GenerateRoute(LatLng startLocation, double totalDistanceMeters, int points)
@@ -147,7 +147,7 @@ namespace HealthVisualization.Activities
             }
             else
             {
-                Toast.MakeText(this, "GPS is not enabled", ToastLength.Short).Show(); // TODO: Definir uma nova mensagem toast
+                Toast.MakeText(this, "O GPS nao está ativado", ToastLength.Short).Show();
             }
         }
 
@@ -156,7 +156,7 @@ namespace HealthVisualization.Activities
             //_locationManager.RequestLocationUpdates(_locationProvider, 0, 0, this);
 
             // Inicia a atualização das posições
-            _handler.PostDelayed(_updatePositionAction, 1000); // TODO: Definir um novo intervalo de tempo de atualização da rota
+            _handler.PostDelayed(_updatePositionAction, 500);
         }
 
         public void OnLocationChanged(Location location)
@@ -176,7 +176,7 @@ namespace HealthVisualization.Activities
                     .SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueBlue)));
 
                 // Atualiza o texto com a latitude e longitude atual
-                _locationTextView.Text = $"Latitude: {location.Latitude}, Longitude: {location.Longitude}"; // TODO: Definir um novo texto do locationTextView
+                _locationTextView.Text = $"Sua Latitude: {location.Latitude}, Sua Longitude: {location.Longitude}";
             }
         }
 

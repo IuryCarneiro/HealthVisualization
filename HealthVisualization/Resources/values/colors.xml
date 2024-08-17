@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO: Mudar as cores conforme o design desejado -->
 <resources>
-  <color name="colorPrimary">#2c3e50</color>
+  <color name="colorPrimary">@color/abc_decor_view_status_guard_light</color>
   <color name="colorPrimaryDark">#1B3147</color>
   <color name="colorAccent">#3498db</color>
   <color name="transparent">#00000000</color>
   <color name="main_color">#3DE841</color>
+  <color name="teste">#000000</color>
+  <color name="fundoLogin">#2896A1</color>
+  <color name="textoLogin">#FFFDDD</color>
 </resources>

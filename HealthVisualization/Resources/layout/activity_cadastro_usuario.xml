@@ -7,43 +7,52 @@
     android:paddingVertical="@dimen/inner_frame_layout_vertical_padding"
     android:paddingHorizontal="@dimen/inner_frame_layout_horizontal_padding">
 
-    <!-- TODO: Adicionar hint para "Digite aqui o nome" nos arquivos de valores -->
     <EditText
         android:inputType="textAutoComplete"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui o nome"
+        android:hint="@string/nome"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/editTextNome" />
 
-    <!-- TODO: Adicionar hint para "Digite aqui o email" nos arquivos de valores -->
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui o email"
+        android:hint="@string/email"
         android:minWidth="25px"
         android:minHeight="25px"
         android:id="@+id/editTextEmail" />
 
-    <!-- TODO: Adicionar hint para "Digite aqui a senha" nos arquivos de valores -->
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite aqui a senha"
+        android:hint="@string/senha"
         android:id="@+id/editTextSenha" />
 
-    <!-- TODO: Adicionar hint para "Confirme aqui a senha" nos arquivos de valores -->
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Confirme aqui a senha"
+        android:hint="@string/confirmarSenha"
         android:id="@+id/editTextConfirmarSenha" />
 
-    <!-- TODO: Adicionar dois novos campos (alem de nome e email) de EditText -->
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/teste"
+        android:id="@+id/editTextTeste" />
+
+   <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/teste2"
+        android:id="@+id/editTextTeste2" />
+
     <Button
         android:text="Cadastrar"
         android:layout_width="match_parent"

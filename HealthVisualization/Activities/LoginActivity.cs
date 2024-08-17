@@ -27,8 +27,8 @@ namespace HealthVisualization.Activities
 
     public class CustomPagerAdapter : FragmentPagerAdapter
     {
-        // TODO: Defina novos nomes para as tabs
-        private readonly string[] tabTitles = { "Login", "Cadastro" };
+       
+        private readonly string[] tabTitles = { "logar", "cadastrar" };
 
         public CustomPagerAdapter(AndroidX.Fragment.App.FragmentManager fm) : base(fm)
         {
@@ -87,36 +87,34 @@ namespace HealthVisualization.Activities
 
         private async void CadastraUsuarioAsync(object? sender, EventArgs e, View view)
         {
-            // TODO: Adicione aqui os novos campos que foram criados
             var nomeUser = view.FindViewById<EditText>(Resource.Id.editTextNome);
             var emailUser = view.FindViewById<EditText>(Resource.Id.editTextEmail);
             var senhaUser = view.FindViewById<EditText>(Resource.Id.editTextSenha);
             var confSenhaUser = view.FindViewById<EditText>(Resource.Id.editTextConfirmarSenha);
+            var teste = view.FindViewById<EditText>(Resource.Id.editTextTeste);
+            var teste2 = view.FindViewById<EditText>(Resource.Id.editTextTeste2);
 
 
             if (senhaUser?.Text == confSenhaUser?.Text)
             {
-                // Crie um objeto com os dados que deseja salvar
                 var dados = new
                 {
                     Nome = nomeUser?.Text,
                     Senha = senhaUser?.Text,
-                    Email = emailUser?.Text
+                    Email = emailUser?.Text,
+                    Teste = teste?.Text,
+                    Teste2 = teste2?.Text,
                 };
 
                 try
                 {
                     string jsonDados = JsonConvert.SerializeObject(dados);
 
-                    // Busca a URL do Firebase do arquivo strings.xml
                     string firebaseUrl = Resources.GetString(Resource.String.firebase_url);
 
-                    //Conecta com o banco de dados Realitme Database do Firebase
                     FirebaseClient firebase = new FirebaseClient(firebaseUrl);
-
-                    // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
                     var result = await firebase
-                        .Child("usuarios")
+                        .Child("users")
                         .PostAsync(jsonDados);
 
                     if (result != null)
@@ -157,10 +155,8 @@ namespace HealthVisualization.Activities
 
             //Conecta com o banco de dados Realitme Database do Firebase
             FirebaseClient firebase = new FirebaseClient(firebaseUrl);
-
-            // TODO: Defina uma nova raiz para o banco de dados. Exemplo: pessoas
             var usuario = (await firebase
-                .Child("usuarios")
+                .Child("users")
                 .OnceAsync<Usuario>()).Select(item => new Usuario
                 {
                     Email = item.Object.Email,
